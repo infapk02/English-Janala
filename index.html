@@ -11,7 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      referrerpo987licy="no-referrer"
     />
     <!-- daisy ui cdn -->
     <link
@@ -23,6 +23,56 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
+    <main>
+      <!-- headerSection -->
+      <header class="w-full h-20 bg-white shadow-md">
+        <nav class="w-11/12 mx-auto h-full flex justify-between items-center">
+          <!-- logo -->
+          <a class="flex items-center cursor-pointer">
+            <h3 class="text-lg font-bold capitalize">english</h3>
+            <img src="./assets/logo.png" alt="nav-logo" />
+            <h3 class="text-lg font-semibold">জানালা</h3>
+          </a>
+          <!-- buttons -->
+          <div class="flex gap-2">
+            <a
+              id="faqBtn"
+              href="#faqSection"
+              class="flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
+            >
+              <i class="fa-solid fa-circle-question"></i>
+              <span class="text-lg font-medium">FAQ</span>
+            </a>
+
+            <a
+              id="learnBtn"
+              href="#learnSection"
+              class="flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
+            >
+              <i class="fa-solid fa-book-open"></i>
+              <span class="text-lg font-medium">Learn</span>
+            </a>
+
+            <a
+              id="logoutBtn"
+              class="flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket mt-0.5"></i>
+              <span class="text-lg font-medium">Logout</span>
+            </a>
+          </div>
+        </nav>
+      </header>
+      <!-- bannerSection -->
+      <section id="banner"></section>
+      <!-- learnSection -->
+      <section id="learn"></section>
+      <!-- FaqSection -->
+      <section id="faq"></section>
+      <!-- footerSection -->
+      <section id="footer"></section>
+    </main>
+
     <!-- js file -->
     <script src="./script.js"></script>
   </body>
