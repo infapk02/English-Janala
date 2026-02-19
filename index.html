@@ -25,7 +25,7 @@
   <body>
     <main>
       <!-- headerSection -->
-      <header class="w-full h-20 bg-white shadow-md">
+      <header class="w-full h-20 hidden bg-white shadow-md">
         <nav class="w-11/12 mx-auto h-full flex justify-between items-center">
           <!-- logo -->
           <a class="flex items-center cursor-pointer">
@@ -64,7 +64,49 @@
         </nav>
       </header>
       <!-- bannerSection -->
-      <section id="banner"></section>
+      <section id="banner" class="w-full h-screen">
+        <div class="w-11/12 mx-auto h-full flex justify-between items-center">
+          <!-- banner text -->
+          <div class="w-1/2 h-fit space-y-5">
+            <h1 class="text-5xl font-bold capitalize">
+              <span class="text-blue-400">english</span> is easy!!
+            </h1>
+            <p class="text-xl font-medium">
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+              যাবে অন্য একটি Level এ
+            </p>
+
+            <div class="w-1/2 space-y-5">
+              <input
+                type="text"
+                id="name"
+                class="w-full p-2 rounded-md"
+                placeholder="Enter Name"
+              />
+              <input
+                type="password"
+                id="password"
+                class="w-full p-2 rounded-md"
+                placeholder="Enter Password (123456)"
+              />
+              <button
+                class="px-4 py-2 bg-indigo-700 text-white capitalize text-lg font-medium rounded-md"
+              >
+                get started
+              </button>
+            </div>
+          </div>
+          <!-- banner image -->
+          <div class="w-1/2 h-fit px-4 flex justify-center items-center">
+            <img
+              src="./assets/hero-student.png"
+              alt="banner-image"
+              class="object-contain"
+            />
+          </div>
+        </div>
+      </section>
       <!-- learnSection -->
       <section id="learn"></section>
       <!-- FaqSection -->
