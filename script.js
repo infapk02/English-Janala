@@ -12,6 +12,15 @@ const getWordsByLesson = (id) => {
     .then((data) => displayWordsByLesson(data.data));
 };
 
+// get word details
+const getWordDetails = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/word/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      displayWordDetails(data.data);
+    });
+};
+
 // display buttons
 const displayButtons = (data) => {
   const buttonsContainer = document.getElementById("buttonsContainer");
@@ -26,6 +35,7 @@ const displayButtons = (data) => {
   });
 };
 
+// display words
 const displayWordsByLesson = (words) => {
   const wordsContainer = document.getElementById("wordsContainer");
   wordsContainer.innerHTML = ``;
@@ -40,12 +50,12 @@ const displayWordsByLesson = (words) => {
                 >
                   <h3 class="font-bold capitalize text-2xl">${word.word}</h3>
                   <p class="text-lg font-bold">Meaning /Pronunciation</p>
-                  <p class="text-lg font-bold">"${word.meaning} / ${word.pronunciation}"</p>
+                  <p class="text-sm text-center font-bold">"${word.meaning ? word.meaning : "মিনিং পাওয়া যায় নি"} / ${word.pronunciation}"</p>
                 </div>
 
                 <div class="flex mt-8 w-full justify-between">
                   <!-- details button -->
-                  <div class="p-2 bg-blue-200 rounded-md cursor-pointer">
+                  <div id="detailsBtn" onclick="getWordDetails(${word.id})" class="p-2 bg-blue-200 rounded-md cursor-pointer">
                     <i class="fa-solid fa-circle-info text-lg"></i>
                   </div>
                   <!-- speaker button -->
@@ -69,6 +79,74 @@ const displayWordsByLesson = (words) => {
               <h3 class="text-4xl font-bold">নেক্সট Lesson এ যান</h3>
             </div>
     `;
+  }
+};
+
+// display word details
+
+const displayWordDetails = (wordDetails) => {
+  const modalContainer = document.getElementById("modalContainer");
+  const synonymsHTML = wordDetails.synonyms?.length
+    ? wordDetails.synonyms
+        .map(
+          (synonym) => `
+          <p class="text-sm rounded-md capitalize px-4 py-1.5 bg-blue-200">
+            ${synonym}
+          </p>
+        `,
+        )
+        .join("")
+    : `<p class="text-sm rounded-md px-4 py-1.5 bg-red-200">
+          কোনো সমার্থক শব্দ পাওয়া যায় নি
+        </p>`;
+
+  modalContainer.innerHTML = `
+    <dialog id="wordDetailsModal" class="modal">
+              <div class="modal-box space-y-4">
+                <!-- word-title -->
+                <div>
+                  <h2 class="text-3xl font-bold uppercase">( ${wordDetails.word} | ${wordDetails.pronunciation} )</h2>
+                </div>
+                <!-- meaning -->
+                <div>
+                  <h2 class="text-2xl font-bold capitalize">Meaning</h2>
+                  <p class="text-base">${wordDetails.meaning ? wordDetails.meaning : "মিনিং পাওয়া যায় নি।"}</p>
+                </div>
+                <!-- example -->
+                <div>
+                  <h2 class="text-2xl font-bold capitalize">example</h2>
+                  <p class="text-base capitalize">${wordDetails.sentence}</p>
+                </div>
+                <!-- supportive words -->
+                <div>
+                  <h2 class="text-2xl font-bold capitalize">
+                    সমার্থক শব্দ গুলো
+                  </h2>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    ${synonymsHTML}
+                  </div>
+                </div>
+                <!-- complete btn -->
+                <button
+                  id="completeBtn"
+                  onclick="document.getElementById('wordDetailsModal').close()"
+                  class="px-4 py-2 bg-blue-500 text-white text-base rounded-md mt-4 cursor-pointer"
+                >
+                  Complete Learning
+                </button>
+              </div>
+              <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+              </form>
+            </dialog>
+  `;
+
+  const detailsModal = document.getElementById("wordDetailsModal");
+
+  if (detailsModal) {
+    detailsModal.showModal();
+  } else {
+    console.log("Modal not found");
   }
 };
 
