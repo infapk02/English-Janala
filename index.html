@@ -11,6 +11,7 @@
       body {
         -ms-overflow-style: none;
         scrollbar-width: none;
+        scroll-behavior: smooth;
       }
 
       html::-webkit-scrollbar,
@@ -39,7 +40,7 @@
   <body>
     <main>
       <!-- headerSection -->
-      <header class="w-full h-20 hidden bg-white shadow-md">
+      <header class="w-full h-20 sticky top-0 bg-white shadow-md">
         <nav class="w-11/12 mx-auto h-full flex justify-between items-center">
           <!-- logo -->
           <a class="flex items-center cursor-pointer">
@@ -78,7 +79,7 @@
         </nav>
       </header>
       <!-- bannerSection -->
-      <section id="banner" class="w-full h-screen hidden">
+      <section id="banner" class="w-full h-[calc(100vh-80px)] hidden">
         <div class="w-11/12 mx-auto h-full flex justify-between items-center">
           <!-- banner text -->
           <div class="w-1/2 h-fit space-y-5">
@@ -122,7 +123,7 @@
         </div>
       </section>
       <!-- learnSection -->
-      <section id="learn" class="w-full h-fit">
+      <section id="learnSection" class="w-full min-h-[calc(100vh-80px)]">
         <div class="w-11/12 mx-auto py-8">
           <!-- title -->
           <h2 class="capitalize text-center text-3xl font-bold">
@@ -152,7 +153,148 @@
         </div>
       </section>
       <!-- FaqSection -->
-      <section id="faq"></section>
+      <section id="faqSection">
+        <div class="w-11/12 mx-auto py-8">
+          <!-- title -->
+          <h2 class="capitalize text-center text-3xl font-bold">
+            <span class="text-blue-400">Frequently</span> Asked Questions
+          </h2>
+
+          <!-- accordion container -->
+          <div id="accordionContainer" class="w-11/12 mx-auto mt-20">
+            <div
+              class="collapse collapse-plus bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" checked="checked" />
+              <div class="collapse-title font-semibold">
+                1. How can I start learning English on this website?
+              </div>
+              <div class="collapse-content text-sm">
+                <p>
+                  You can start learning English on English Janala very easily
+                  by following these steps:
+                </p>
+
+                <p>
+                  1. Browse Lessons – Explore the available word cards and
+                  lessons on the homepage to find topics you want to learn.
+                </p>
+
+                <p>
+                  2. Listen to Pronunciation – Click the speaker button on any
+                  word card to hear the correct pronunciation.
+                </p>
+
+                <p>
+                  3. Practice Regularly – Repeat the words after listening to
+                  improve your speaking skills.
+                </p>
+
+                <p>
+                  4. Learn Meanings & Usage – Read the meanings and examples
+                  provided with each word to understand how they are used in
+                  real life.
+                </p>
+
+                <p>
+                  5. Stay Consistent – Spend a few minutes every day practicing
+                  to gradually build your vocabulary and confidence.
+                </p>
+
+                <p>
+                  This platform is designed to make English learning simple,
+                  interactive, and beginner-friendly, so you can improve step by
+                  step. 👍
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-plus bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                2. Is this website free to use?
+              </div>
+              <div class="collapse-content text-sm">
+                <p>
+                  Yes, this website is completely free to use. You can access
+                  lessons, vocabulary, and pronunciation features without any
+                  cost.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-plus bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                3. Do I need to create an account?
+              </div>
+              <div class="collapse-content text-sm">
+                <h3>No, you do not need to create an account.</h3>
+                <p>
+                  You can access all lessons, vocabulary, and pronunciation
+                  features directly without signing up or logging in. The
+                  website is designed to make learning simple and easily
+                  accessible for everyone.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-plus bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                4. How can I build my English vocabulary?
+              </div>
+              <div class="collapse-content text-sm">
+                <h3>
+                  You can build your English vocabulary by practicing regularly
+                  on the website.
+                </h3>
+                <p>
+                  Browse different lessons, learn new words with meanings and
+                  examples, and use the pronunciation feature to hear how words
+                  are spoken. Repeating words daily and using them in sentences
+                  will help you remember them more effectively.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="collapse collapse-plus bg-base-100 border border-base-300"
+            >
+              <input type="radio" name="my-accordion-3" />
+              <div class="collapse-title font-semibold">
+                5. Do you offer certificates for completed courses?
+              </div>
+              <div class="collapse-content text-sm">
+                <h3>
+                  currently no — there are no certificates offered after
+                  completing lessons.
+                </h3>
+                <p>
+                  Our platform is mainly designed to: <br />
+
+                  Help users learn vocabulary interactively <br />
+
+                  Practice pronunciation with audio <br />
+
+                  Understand meanings, examples, and synonyms <br />
+
+                  Progress lesson by lesson <br />
+
+                  So it focuses more on learning experience and skill
+                  improvement, not formal certification.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- footerSection -->
       <section id="footer"></section>
     </main>
