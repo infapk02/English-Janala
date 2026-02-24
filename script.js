@@ -21,6 +21,8 @@ const getWordDetails = (id) => {
     });
 };
 
+// active button functionalities
+
 const handleLessonClick = (button, levelNo) => {
   // remove active from all buttons
   const allButtons = document.querySelectorAll(".lesson-btn");
@@ -35,6 +37,15 @@ const handleLessonClick = (button, levelNo) => {
   // load words
   getWordsByLesson(levelNo);
 };
+
+// speck word functionalities
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  utterance.rate = 0.4;
+  utterance.pitch = 0.1;
+  window.speechSynthesis.speak(utterance);
+}
 
 // display buttons
 const displayButtons = (data) => {
@@ -78,7 +89,7 @@ const displayWordsByLesson = (words) => {
                     <i class="fa-solid fa-circle-info text-lg"></i>
                   </div>
                   <!-- speaker button -->
-                  <div class="p-2 bg-blue-200 rounded-md cursor-pointer">
+                  <div onclick ="pronounceWord('${word.word}')" class="p-2 bg-blue-200 rounded-md cursor-pointer">
                     <i class="fa-solid fa-volume-low text-lg"></i>
                   </div>
                 </div>
