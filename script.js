@@ -21,17 +21,36 @@ const getWordDetails = (id) => {
     });
 };
 
+const handleLessonClick = (button, levelNo) => {
+  // remove active from all buttons
+  const allButtons = document.querySelectorAll(".lesson-btn");
+
+  allButtons.forEach((btn) => {
+    btn.classList.remove("bg-indigo-700", "text-white");
+  });
+
+  // add active to clicked button
+  button.classList.add("bg-indigo-700", "text-white");
+
+  // load words
+  getWordsByLesson(levelNo);
+};
+
 // display buttons
 const displayButtons = (data) => {
   const buttonsContainer = document.getElementById("buttonsContainer");
   buttonsContainer.innerHTML = ``;
+
   data.forEach((elem) => {
-    buttonsContainer.innerHTML += `<button id="${elem.id}" onclick="getWordsByLesson(${elem.level_no})"
-              class="flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
-            >
-              <i class="fa-solid fa-book-open"></i>
-              <span class="text-lg font-medium">Lesson-${elem.level_no}</span>
-            </button>`;
+    buttonsContainer.innerHTML += `
+      <button
+        onclick="handleLessonClick(this, ${elem.level_no})"
+        class="lesson-btn flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
+      >
+        <i class="fa-solid fa-book-open"></i>
+        <span class="text-lg font-medium">Lesson-${elem.level_no}</span>
+      </button>
+    `;
   });
 };
 
