@@ -43,7 +43,7 @@ function pronounceWord(word) {
   const utterance = new SpeechSynthesisUtterance(word);
   utterance.lang = "en-EN"; // English
   utterance.rate = 0.4;
-  utterance.pitch = 0.1;
+  utterance.pitch = 2;
   window.speechSynthesis.speak(utterance);
 }
 
@@ -180,6 +180,46 @@ const displayWordDetails = (wordDetails) => {
   }
 };
 
+// name password validation
+const namePasswordValidation = () => {
+  const nameInput = document.getElementById("name");
+  const passwordInput = document.getElementById("password");
+
+  if (nameInput.value.length) {
+    if (passwordInput.value.length) {
+      if (parseInt(passwordInput.value) === 123456) {
+        const navbar = document.getElementById("navbar");
+        const banner = document.getElementById("banner");
+        const learnSection = document.getElementById("learnSection");
+        const faqSection = document.getElementById("faqSection");
+
+        banner.classList.add("hidden");
+        learnSection.classList.remove("hidden");
+        faqSection.classList.remove("hidden");
+        navbar.classList.remove("hidden");
+      } else {
+        alert("Wrong Password! Please enter your right password");
+      }
+    } else {
+      alert("Please enter your password");
+    }
+  } else {
+    alert("Please enter your name first");
+  }
+};
+
+// handle logout functionalities
+const handleLogout = () => {
+  const navbar = document.getElementById("navbar");
+  const banner = document.getElementById("banner");
+  const learnSection = document.getElementById("learnSection");
+  const faqSection = document.getElementById("faqSection");
+
+  banner.classList.remove("hidden");
+  learnSection.classList.add("hidden");
+  faqSection.classList.add("hidden");
+  navbar.classList.add("hidden");
+};
 // call get functions
 getLessonButtons();
 // call display functions
