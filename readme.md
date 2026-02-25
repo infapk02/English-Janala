@@ -15,7 +15,7 @@ This project was built using **HTML, Tailwind CSS, DaisyUI, and Vanilla JavaScri
 
 ## ✨ Features
 
-✅ User login validation (name + password)
+`✅ User login validation (name + password)
 ✅ Dynamic lesson buttons loaded from API
 ✅ Vocabulary cards based on selected lesson
 ✅ Word pronunciation using Speech Synthesis API
@@ -24,7 +24,7 @@ This project was built using **HTML, Tailwind CSS, DaisyUI, and Vanilla JavaScri
 ✅ Smooth scrolling navigation
 ✅ Conditional UI (show/hide sections after login/logout)
 ✅ Loading and empty state handling
-✅ Responsive design for all devices
+✅ Responsive design for all devices`
 
 ---
 
@@ -131,12 +131,13 @@ function pronounceWord(word) {
 
 ## 🎯 Challenges Implemented
 
+`
 ✔ Custom navigation with smooth scrolling
 ✔ Conditional rendering (login/logout UI control)
 ✔ API error & empty state handling
 ✔ Dynamic modal creation
 ✔ Active state management
-✔ Speech pronunciation integration
+✔ Speech pronunciation integration`
 
 ---
 
