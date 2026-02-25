@@ -56,10 +56,10 @@ const displayButtons = (data) => {
     buttonsContainer.innerHTML += `
       <button
         onclick="handleLessonClick(this, ${elem.level_no})"
-        class="lesson-btn flex items-center border-2 text-indigo-700 border-indigo-700 px-4 py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
+        class="lesson-btn flex items-center border-2 text-indigo-700 border-indigo-700 px-2 sm:px-4 py-0.5 sm:py-1 gap-0.5 rounded-md hover:bg-indigo-700 hover:text-white transition duration-300 cursor-pointer"
       >
-        <i class="fa-solid fa-book-open"></i>
-        <span class="text-lg font-medium">Lesson-${elem.level_no}</span>
+        <i class="fa-solid fa-book-open text-xs sm:text-base"></i>
+        <span class="text-sm sm:text-lg font-medium">Lesson-${elem.level_no}</span>
       </button>
     `;
   });
@@ -100,13 +100,13 @@ const displayWordsByLesson = (words) => {
   } else {
     wordsContainer.innerHTML = `
             <div
-              class="col-span-12 p-20 flex flex-col justify-center items-center bg-gray-200 rounded-md"
+              class="col-span-12 p-10 sm:p-20 flex flex-col justify-center items-center bg-gray-200 rounded-md"
             >
               <img src="./assets/alert-error.png" alt="error-image">
-              <p class="text-sm text-gray-500 font-medium mb-1">
+              <p class="text-xs sm:text-sm text-gray-500 font-medium mb-1">
                 এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।
               </p>
-              <h3 class="text-4xl font-bold">নেক্সট Lesson এ যান</h3>
+              <h3 class="text-xl sm:text-2xl md:text-4xl font-bold">নেক্সট Lesson এ যান</h3>
             </div>
     `;
   }
@@ -135,21 +135,21 @@ const displayWordDetails = (wordDetails) => {
               <div class="modal-box space-y-4">
                 <!-- word-title -->
                 <div>
-                  <h2 class="text-3xl font-bold uppercase">( ${wordDetails.word} | ${wordDetails.pronunciation} )</h2>
+                  <h2 class="sm:text-3xl text-xl font-bold uppercase">( ${wordDetails.word} | ${wordDetails.pronunciation} )</h2>
                 </div>
                 <!-- meaning -->
                 <div>
-                  <h2 class="text-2xl font-bold capitalize">Meaning</h2>
+                  <h2 class="sm:text-2xl text-lg font-bold capitalize">Meaning</h2>
                   <p class="text-base">${wordDetails.meaning ? wordDetails.meaning : "মিনিং পাওয়া যায় নি।"}</p>
                 </div>
                 <!-- example -->
                 <div>
-                  <h2 class="text-2xl font-bold capitalize">example</h2>
+                  <h2 class="sm:text-2xl text-lg font-bold capitalize">example</h2>
                   <p class="text-base capitalize">${wordDetails.sentence}</p>
                 </div>
                 <!-- supportive words -->
                 <div>
-                  <h2 class="text-2xl font-bold capitalize">
+                  <h2 class="sm:text-2xl text-lg font-bold capitalize">
                     সমার্থক শব্দ গুলো
                   </h2>
                   <div class="flex flex-wrap gap-2 mt-2">
